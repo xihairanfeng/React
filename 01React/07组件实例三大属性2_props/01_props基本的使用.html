@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello_React</title>
+ 
+</head>
+<body>
+<div id="test">
+  
+</div>
+<div id="test2">
+  
+</div>
+<div id="test3">
+  
+</div>
+
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script type="text/javascript" src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script type="text/babel">
+
+class Person extends React.Component{
+  
+  render() {
+    console.log(this)
+    const {name, sex, age} = this.props
+    return (
+        <ul>
+          <li>姓名：{name}</li>
+          <li>性别：{sex}</li>
+          <li>年龄：{age}</li>
+        </ul>  
+    )
+  }
+}
+
+ReactDOM.render(<Person name="tom" age="18" sex="女"/>, document.getElementById('test'))
+ReactDOM.render(<Person name="tom" age="19" sex="女"/>, document.getElementById('test2'))
+ReactDOM.render(<Person name="tom" age="18" sex="男"/>, document.getElementById('test3'))
+
+
+
+
+  
+
+
+</script>
+</body>
+</html>

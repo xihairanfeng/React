@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello_React</title>
+ 
+</head>
+<body>
+<div id="test">
+  
+</div>
+<script type="text/javascript">
+
+class Person {
+  constructor(name, age) {
+    // this指的是类的实例对象
+    this.name = name
+    this.age = age
+  }
+
+  speak() {
+    console.log(`我叫${this.name}，我的年龄是${this.age}`)
+  }
+
+  study() {
+    // study方法放在了哪里？-类的原型对象上，供实例使用
+    console.log(this)
+  }
+}
+
+const p1 = new Person('taylor', 18)
+
+console.log(p1)
+p1.speak()//Person的实例
+
+const x = p1.study
+x()//undefined
+// 类中的方法开启了局部严格模式
+
+function demo() {
+  console.log(this)//window
+}
+
+
+function demo1() {
+  'use strict'
+  console.log(this)//undefined
+}
+
+demo()
+demo1()
+
+</script>
+</body>
+</html>
